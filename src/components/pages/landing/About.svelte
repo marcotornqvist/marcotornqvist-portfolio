@@ -38,10 +38,10 @@
   @import "../../../styles/variables/shadows";
 
   .about {
-    padding-bottom: 9rem;
+    padding-bottom: 3rem;
 
     .container {
-      min-height: 500px;
+      min-height: 300px;
     }
 
     .image-container {

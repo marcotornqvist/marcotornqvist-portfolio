@@ -1,11 +1,16 @@
 <script>
   import CopyClipBoard from "../../../modules/CopyClipBoard.svelte";
+  import Notification from "./Notification.svelte";
 
   let email = "marcotornqvist@gmail.com";
   let copied = false;
 
   const copy = () => {
     copied = true;
+    setTimeout(() => {
+      copied = false;
+    }, 5000);
+
     const app = new CopyClipBoard({
       target: document.getElementById("clipboard"),
       props: { email },
@@ -16,6 +21,7 @@
 
 <div class="contact">
   <div class="container">
+    <Notification {copied} />
     <h4 class="title">Contact information</h4>
     <button on:click={copy} class:copied>
       <div class="email">
@@ -64,6 +70,7 @@
     display: flex;
     justify-content: center;
     padding-bottom: 9rem;
+    position: relative;
 
     h4.title {
       text-align: center;
