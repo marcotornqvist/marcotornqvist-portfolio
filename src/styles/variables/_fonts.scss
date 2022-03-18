@@ -1,0 +1,21 @@
+// Font families
+$font-title: "Raleway", sans-serif;
+$font-body: "Cabin", sans-serif;
+
+@font-face {
+  font-family: $font-title;
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap");
+}
+
+@font-face {
+  font-family: $font-body;
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.googleapis.com/css2?family=Cabin:wght@400&display=swap");
+}
+
+// Font weights
+$font-title-weight: 600;
+$font-body-weight: 400;
