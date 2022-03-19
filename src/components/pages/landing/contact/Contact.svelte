@@ -83,7 +83,7 @@
       align-items: center;
       width: 100%;
       height: 6rem;
-      padding: 0 1.5rem;
+      padding: 0 1rem;
       border: none;
       border-radius: $radius-lg;
       background: $blue;
@@ -92,10 +92,7 @@
 
       .email {
         flex: 1;
-
-        h4 {
-          font-size: 16px;
-        }
+        padding-left: 1rem;
       }
 
       svg {
@@ -114,12 +111,10 @@
   @media only screen and (min-width: $breakpoint-sm) {
     .contact {
       button {
+        padding: 0 1.5rem;
+
         .email {
           padding-left: 2rem;
-
-          h4 {
-            font-size: 20px;
-          }
         }
 
         svg {

@@ -39,35 +39,38 @@ body {
 h1 {
   font-size: 4rem;
   line-height: 4.5rem;
-  text-transform: uppercase;
+  font-weight: 600;
 }
 
 h2 {
   font-size: 2rem;
   line-height: 3rem;
+  font-weight: 600;
 }
 
 h3 {
   font-size: 1.25rem;
-  line-height: 2rem;
+  line-height: 2.25rem;
+  font-weight: 600;
 }
 
 h4 {
-  font-size: 1.25rem;
-  line-height: 2rem;
+  font-size: 1rem;
+  line-height: 1.9rem;
   font-weight: 600;
 }
 
 input,
 label,
 textarea {
-  line-height: 1.5rem;
-  font-size: 16px;
+  line-height: 1.9rem;
+  font-size: 1rem;
 }
 
 p {
-  font-size: 16px;
-  line-height: 1.75rem;
+  font-size: 1rem;
+  line-height: 1.8rem;
+  font-weight: 400;
   font-family: $font-body;
 }
 
@@ -78,7 +81,7 @@ a {
 
 button {
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
   outline: none;
 }
 
@@ -111,35 +114,29 @@ section {
   padding: 1.5rem 0 3rem 0;
 }
 
+@media only screen and (min-width: $breakpoint-sm) {
+  h1 {
+    font-size: 5rem;
+    line-height: 5.5rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+    line-height: 3.75rem;
+  }
+}
+
 @media only screen and (min-width: $breakpoint-md) {
   .container {
     padding: 0 2rem;
   }
 
-  // h1 {
-  //   font-size: 2.5rem;
-  //   line-height: 3.25rem;
-  // }
+  li a {
+    transition: color 0.1s ease-in-out;
 
-  // h2 {
-  //   font-size: 2rem;
-  //   line-height: 3rem;
-  // }
-
-  // h3 {
-  //   font-size: 1.5rem;
-  //   line-height: 2.5rem;
-  // }
-
-  h4 {
-    font-size: 18px;
-    // font-size: 1.75rem;
-    // line-height: 2.75rem;
-  }
-
-  p {
-    font-size: 1rem;
-    line-height: 2rem;
+    &:hover {
+      color: $orange;
+    }
   }
 }
 
@@ -157,14 +154,6 @@ section {
 //     overflow: initial;
 //   }
 
-li a {
-  transition: color 0.1s ease-in-out;
-
-  &:hover {
-    color: $orange;
-  }
-}
-
 //   h1 {
 //     font-size: 4rem;
 //     line-height: 4.75rem;
@@ -176,18 +165,18 @@ li a {
     max-width: $breakpoint-xl;
   }
 
-  h1 {
-    font-size: 9rem;
-    line-height: 10rem;
-  }
+  // h1 {
+  //   font-size: 9rem;
+  //   line-height: 10rem;
+  // }
 
-  h2 {
-    font-size: 6rem;
-    line-height: 7rem;
-  }
+  // h2 {
+  //   font-size: 6rem;
+  //   line-height: 7rem;
+  // }
 
-  h2 {
-    font-size: 6rem;
-    line-height: 7rem;
-  }
+  // h2 {
+  //   font-size: 6rem;
+  //   line-height: 7rem;
+  // }
 }

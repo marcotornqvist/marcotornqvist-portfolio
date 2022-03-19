@@ -1,4 +1,22 @@
 <script>
+  import CopyClipBoard from "../modules/CopyClipBoard.svelte";
+  import Notification from "./Notification.svelte";
+
+  let email = "marcotornqvist@gmail.com";
+  let copied = false;
+
+  const copy = () => {
+    copied = true;
+    setTimeout(() => {
+      copied = false;
+    }, 5000);
+
+    const app = new CopyClipBoard({
+      target: document.getElementById("clipboard"),
+      props: { email },
+    });
+    app.$destroy();
+  };
 </script>
 
 <nav>
@@ -6,16 +24,17 @@
     <h4>Marco Törnqvist</h4>
     <ul>
       <li>
-        <a href="https://github.com/marcotornqvist" target="_blank">Github</a>
+        <a href="https://github.com/marcotornqvist" target="blank">Github</a>
       </li>
       <li>
         <a
           href="https://www.linkedin.com/in/marco-t%C3%B6rnqvist-2b6211129/"
-          target="_blank">LinkedIn</a
+          target="blank">LinkedIn</a
         >
       </li>
-      <li class="hide-li">Email</li>
+      <li class="email" on:click={copy} class:copied>Email</li>
     </ul>
+    <Notification {copied} />
   </div>
 </nav>
 
@@ -36,36 +55,34 @@
       width: 100%;
     }
 
-    h4 {
-      font-size: 16px;
-    }
-
     ul {
       display: flex;
 
       li {
         margin-left: 1rem;
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: 500;
 
         &:first-child {
           margin: 0;
         }
 
-        &.hide-li {
+        &.email {
           display: none;
         }
       }
-    }
 
-    @media only screen and (min-width: $breakpoint-sm) {
-      nav {
-        ul {
-          li {
-            &.hide-li {
-              display: inline;
-            }
-          }
+      li.copied {
+        color: $orange;
+      }
+    }
+  }
+
+  @media only screen and (min-width: $breakpoint-sm) {
+    nav {
+      ul {
+        li.email {
+          display: initial;
         }
       }
     }

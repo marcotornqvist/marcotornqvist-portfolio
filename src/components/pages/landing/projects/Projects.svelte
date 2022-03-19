@@ -13,7 +13,7 @@
 
 <div class="projects">
   <div class="container">
-    <h4 class:visible>Projects</h4>
+    <h3 class:visible>Projects</h3>
     <ProjectItem />
   </div>
 </div>
@@ -26,7 +26,7 @@
   .projects {
     padding-bottom: 9rem;
 
-    h4 {
+    h3 {
       opacity: 0;
       transition: opacity 1s;
       margin-bottom: 0.5rem;

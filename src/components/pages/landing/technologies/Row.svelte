@@ -33,6 +33,7 @@
       margin-right: 1.5rem;
 
       h1 {
+        text-transform: uppercase;
         white-space: nowrap;
       }
 

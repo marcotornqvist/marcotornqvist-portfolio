@@ -37,7 +37,8 @@
       box-shadow: $box-shadow1;
 
       span {
-        font-size: 14px;
+        font-size: 1rem;
+        font-weight: 500;
       }
     }
   }

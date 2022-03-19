@@ -4,11 +4,7 @@
   let visible = false;
 </script>
 
-<div
-  class="about"
-  use:inViewport={{ bottom: 150 }}
-  on:enter={() => (visible = true)}
->
+<div class="about" use:inViewport on:enter={() => (visible = true)}>
   <div class="container">
     {#if visible}
       <div

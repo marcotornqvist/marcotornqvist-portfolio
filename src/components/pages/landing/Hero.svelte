@@ -13,14 +13,18 @@
         I'm Full Stack Developer based in Helsinki, Finland.
       </h2>
       <p in:fly={{ y: 100, duration: 1000 }}>
-        I’m currently open for hire, preferably at a company based in Helsinki
-        or Remote/Hybrid.
+        Currently open for hire, preferably at a company based in Helsinki or
+        Remote/Hybrid.
       </p>
     {/if}
   </div>
 </div>
 
 <style lang="scss">
+  @import "../../../styles/variables/breakpoints";
+  @import "../../../styles/variables/border-radius";
+  @import "../../../styles/variables/colors";
+
   .hero {
     min-height: 70vh;
     padding-top: 100px;
@@ -31,9 +35,16 @@
     }
 
     p {
-      font-size: 1.125rem;
-      line-height: 2rem;
-      font-weight: 400;
+      font-size: 1.25rem;
+      line-height: 2.25rem;
+    }
+  }
+
+  @media only screen and (min-width: $breakpoint-sm) {
+    .hero {
+      h2 {
+        margin-bottom: 1rem;
+      }
     }
   }
 </style>

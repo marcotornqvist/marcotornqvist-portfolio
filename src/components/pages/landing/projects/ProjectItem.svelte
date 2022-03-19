@@ -1,6 +1,6 @@
 <script>
-  import { fade } from "svelte/transition";
   import { onMount } from "svelte";
+  import truncateText from "../../../../utils/handlers/truncateText";
 
   $: innerWidth = 0;
   let mobile = true;
@@ -17,6 +17,10 @@
   });
 
   $: mobile = innerWidth > 768 ? false : true;
+
+  const string = `My main goal with Collabor8 was to create a project that would cover most of my web development skills in one single project and in the mean time use as many modern technologies as possible. So I came up with Collabor8 which is a social-media plattform created for artists that are looking to collaborate on different versatile projects. I started out with designing the application, in Adobe XD. I then progressed to build the Backend and lastly but not least the Frontend. 
+  
+The application uses technologies such as Next.js, TypeScript, GraphQL, Node.js, AWS, Prisma & PostgreSQL and covers functionality such as chat-messaging (subscriptions), image upload, authentication, queries & mutations.`;
 </script>
 
 <svelte:window bind:innerWidth />
@@ -30,29 +34,15 @@
     />
   </div>
   <div class="content">
-    <h4>Collabor8</h4>
-    <div class="description" in:fade={{ duration: 1000 }}>
-      <p class="section-1">
-        My main goal with Collabor8 was to create a project that would cover
-        most of my web development skills in one single project and in the mean
-        time use as many modern technologies as possible. So I came up with
-        Collabor8 which is a social-media plattform created for artists that are
-        looking to collaborate on different versatile projects. I started out
-        with designing the application, in Adobe XD. I then progressed to build
-        the Backend and lastly but not least the Frontend. <br /><br />The
-        application uses technologies such as Next.js, TypeScript, GraphQL,
-        Node.js, AWS, Prisma & PostgreSQL and covers functionality such as
-        chat-messaging (subscriptions), image upload, authentication, queries &
-        mutations.
+    <h3>Collabor8</h3>
+    <div class="description">
+      <p>
+        {#if !visible && mobile}
+          {truncateText(string, 193)}
+        {:else}
+          {string}
+        {/if}
       </p>
-      <!-- {#if visible || !mobile}
-        <p class="section-2">
-          The application uses technologies such as Next.js, TypeScript,
-          GraphQL, Node.js, AWS, Prisma & PostgreSQL and covers functionality
-          such as chat-messaging (subscriptions), image upload, authentication,
-          queries & mutations.
-        </p>
-      {/if} -->
     </div>
     {#if !visible && mobile}
       <button
@@ -64,38 +54,42 @@
     <span class="date">Mar 14, 2022</span>
     <div class="buttons">
       <button>
-        <span>Demo</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M14 5l7 7m0 0l-7 7m7-7H3"
-          />
-        </svg>
+        <a href="https://collabor8-frontend.vercel.app/" target="blank">
+          <span>Demo</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            />
+          </svg>
+        </a>
       </button>
       <button>
-        <span>Github Repository</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M14 5l7 7m0 0l-7 7m7-7H3"
-          />
-        </svg>
+        <a href="https://github.com/marcotornqvist/collabor8" target="blank">
+          <span>Github Repository</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            />
+          </svg>
+        </a>
       </button>
     </div>
   </div>
@@ -141,17 +135,15 @@
       border-bottom-right-radius: $radius-md;
       background: $white;
 
-      h4 {
+      h3 {
         color: $dark-blue;
         margin-bottom: 1rem;
       }
 
       .description {
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
 
         p {
-          font-size: 16px;
-          line-height: 2rem;
           color: $dark-blue;
         }
       }
@@ -160,8 +152,7 @@
         width: 100%;
         height: 3rem;
         padding: 0 1rem;
-        margin-bottom: 2rem;
-        font-size: px;
+        margin-bottom: 1.5rem;
         font-weight: 500;
         border: none;
         border-radius: $radius-md;
@@ -171,26 +162,29 @@
 
       span.date {
         color: $grey;
-        font-size: px;
       }
 
       .buttons {
         padding-top: 2rem;
 
         button {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
           width: 100%;
           height: 3rem;
-          padding: 0 1rem;
           margin-bottom: 1rem;
           border: none;
           border-radius: $radius-md;
           background: $orange;
 
+          a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+            height: 100%;
+            width: 100%;
+          }
+
           span {
-            font-size: px;
             font-weight: 500;
             color: $white;
           }
@@ -235,7 +229,7 @@
             margin-right: 1.5rem;
             width: 250px;
 
-            &:last-child {
+            a &:last-child {
               margin: 0;
             }
           }

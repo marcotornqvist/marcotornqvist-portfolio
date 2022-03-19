@@ -15,7 +15,7 @@
 
 <div
   class="skills"
-  use:inViewport={{ bottom: 100 }}
+  use:inViewport={{ bottom: 250 }}
   on:enter={() => (skillsVisible = true)}
 >
   <div class="container">
@@ -33,8 +33,8 @@
         <p>
           lately I’ve been learning about Solidity and Blockchain development.
           I’m eager to learn more about Web3 technologies, but also frontend
-          frameworks such as Svelte, Remix and backend languages such as Golang
-          and Rust.
+          frameworks such as Svelte (this site is made with Svelte), Remix and
+          backend languages such as Golang and Rust.
         </p>
       </div>
       <h3 class="grid-title" in:fly={{ y: 50, duration: 1000, delay: 1000 }}>
@@ -43,7 +43,7 @@
       <ul in:fly={{ y: 50, duration: 1000, delay: 1500 }}>
         {#each list as tech}
           <li>
-            <a href={tech.link} target="_blank">
+            <a href={tech.link} target="blank">
               <span>{tech.title}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +117,7 @@
 
         span {
           font-family: $font-body;
-          font-size: 1.25rem;
+          font-size: 1.125rem;
         }
 
         svg {
