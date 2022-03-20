@@ -1,4 +1,6 @@
 <script>
+  import { fade, fly } from "svelte/transition";
+  import { onMount } from "svelte";
   import CopyClipBoard from "../modules/CopyClipBoard.svelte";
   import Notification from "./Notification.svelte";
 
@@ -17,24 +19,29 @@
     });
     app.$destroy();
   };
+
+  let ready = false;
+  onMount(() => (ready = true));
 </script>
 
 <nav>
   <div class="container">
-    <h4>Marco Törnqvist</h4>
-    <ul>
-      <li>
-        <a href="https://github.com/marcotornqvist" target="blank">Github</a>
-      </li>
-      <li>
-        <a
-          href="https://www.linkedin.com/in/marco-t%C3%B6rnqvist-2b6211129/"
-          target="blank">LinkedIn</a
-        >
-      </li>
-      <li class="email" on:click={copy} class:copied>Email</li>
-    </ul>
-    <Notification {copied} />
+    {#if ready}
+      <h4 in:fade={{ duration: 1000, delay: 0 }}>Marco Törnqvist</h4>
+      <ul>
+        <li in:fade={{ duration: 1000, delay: 0 }}>
+          <a href="https://github.com/marcotornqvist" target="blank">Github</a>
+        </li>
+        <li in:fade={{ duration: 1000, delay: 0 }}>
+          <a
+            href="https://www.linkedin.com/in/marco-t%C3%B6rnqvist-2b6211129/"
+            target="blank">LinkedIn</a
+          >
+        </li>
+        <li class="email" on:click={copy} class:copied>Email</li>
+      </ul>
+      <Notification {copied} />
+    {/if}
   </div>
 </nav>
 

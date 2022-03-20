@@ -15,7 +15,7 @@
     <Hero />
     <Projects />
   </div>
-  <Scroller />
+  <!-- <Scroller /> -->
   <Skills />
   <About />
   <Contact />

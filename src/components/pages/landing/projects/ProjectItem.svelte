@@ -16,11 +16,7 @@
     };
   });
 
-  $: mobile = innerWidth > 768 ? false : true;
-
-  const string = `My main goal with Collabor8 was to create a project that would cover most of my web development skills in one single project and in the mean time use as many modern technologies as possible. So I came up with Collabor8 which is a social-media plattform created for artists that are looking to collaborate on different versatile projects. I started out with designing the application, in Adobe XD. I then progressed to build the Backend and lastly but not least the Frontend. 
-  
-The application uses technologies such as Next.js, TypeScript, GraphQL, Node.js, AWS, Prisma & PostgreSQL and covers functionality such as chat-messaging (subscriptions), image upload, authentication, queries & mutations.`;
+  $: mobile = innerWidth > 920 ? false : true;
 </script>
 
 <svelte:window bind:innerWidth />
@@ -38,57 +34,44 @@ The application uses technologies such as Next.js, TypeScript, GraphQL, Node.js,
     <div class="description">
       <p>
         {#if !visible && mobile}
-          {truncateText(string, 193)}
+          Collabor8 is a social-media like platform created primarily for
+          creators/artists that are looking to collaborate on different
+          versatile projects...
         {:else}
-          {string}
+          Collabor8 is a social-media like platform created primarily for
+          creators/artists that are looking to collaborate on different
+          versatile projects. The main goal with Collabor8 was to create a
+          project that would cover most of my web development skills in one
+          single project and in the mean time use as many modern technologies as
+          possible. I started out with designing the application, in Adobe XD. I
+          then progressed to build the Backend and lastly but not least the
+          Frontend.
+          <br /><br />
+          The application uses technologies such as Next.js, TypeScript, GraphQL,
+          Node.js, AWS, Prisma & PostgreSQL and covers functionality such as chat-messaging
+          (subscriptions), image upload, authentication, queries & mutations.
         {/if}
       </p>
+      {#if !visible && mobile}
+        <span
+          class="read-more"
+          class:hidden={visible}
+          on:click={() => (visible = true)}
+        >
+          Read More
+        </span>
+      {/if}
     </div>
-    {#if !visible && mobile}
-      <button
-        class="read-more-btn"
-        class:hidden={visible}
-        on:click={() => (visible = true)}>Read More</button
-      >
-    {/if}
     <span class="date">Mar 14, 2022</span>
     <div class="buttons">
       <button>
         <a href="https://collabor8-frontend.vercel.app/" target="blank">
           <span>Demo</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M14 5l7 7m0 0l-7 7m7-7H3"
-            />
-          </svg>
         </a>
       </button>
       <button>
         <a href="https://github.com/marcotornqvist/collabor8" target="blank">
           <span>Github Repository</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M14 5l7 7m0 0l-7 7m7-7H3"
-            />
-          </svg>
         </a>
       </button>
     </div>
@@ -99,6 +82,7 @@ The application uses technologies such as Next.js, TypeScript, GraphQL, Node.js,
   @import "../../../../styles/variables/breakpoints";
   @import "../../../../styles/variables/border-radius";
   @import "../../../../styles/variables/colors";
+  @import "../../../../styles/variables/fonts";
   @import "../../../../styles/variables/zindex";
 
   .project-item {
@@ -145,19 +129,13 @@ The application uses technologies such as Next.js, TypeScript, GraphQL, Node.js,
 
         p {
           color: $dark-blue;
+          margin-bottom: 1rem;
         }
-      }
 
-      .read-more-btn {
-        width: 100%;
-        height: 3rem;
-        padding: 0 1rem;
-        margin-bottom: 1.5rem;
-        font-weight: 500;
-        border: none;
-        border-radius: $radius-md;
-        color: $white;
-        background: $dark-blue;
+        .read-more {
+          font-family: $font-body;
+          color: $orange;
+        }
       }
 
       span.date {
@@ -165,38 +143,52 @@ The application uses technologies such as Next.js, TypeScript, GraphQL, Node.js,
       }
 
       .buttons {
+        display: flex;
+        flex-direction: column;
         padding-top: 2rem;
 
         button {
-          width: 100%;
+          min-width: 100%;
           height: 3rem;
           margin-bottom: 1rem;
-          border: none;
-          border-radius: $radius-md;
-          background: $orange;
+          border: 1px solid #e7e7e7;
+          border-radius: 25px;
+          background: #f3f3f3;
 
           a {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: center;
+            min-width: 100%;
+            min-height: 100%;
             padding: 0 1rem;
-            height: 100%;
-            width: 100%;
-          }
-
-          span {
-            font-weight: 500;
-            color: $white;
-          }
-
-          svg {
-            width: 1.5rem;
-            height: 1.5rem;
           }
 
           &:last-child {
-            margin: 0;
+            margin-bottom: 0;
           }
+
+          span {
+            color: $dark-blue;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: $breakpoint-sm) {
+    .project-item .content .buttons {
+      display: flex;
+      flex-direction: row;
+
+      button {
+        min-width: initial;
+        flex: 1;
+        margin: 0 1rem 0 0;
+        max-width: 250px;
+
+        &:last-child {
+          margin: 0;
         }
       }
     }
