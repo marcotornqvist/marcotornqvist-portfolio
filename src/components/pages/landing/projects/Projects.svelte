@@ -36,4 +36,10 @@
       }
     }
   }
+
+  @media only screen and (min-width: $breakpoint-md) {
+    .projects {
+      padding-bottom: 12rem;
+    }
+  }
 </style>

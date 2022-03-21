@@ -27,7 +27,7 @@
     .notification {
       display: initial;
       position: absolute;
-      right: 1rem;
+      right: 1.5rem;
       top: 4rem;
       display: flex;
       align-items: center;

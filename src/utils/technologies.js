@@ -55,6 +55,11 @@ export const technologies = [
     link: "https://www.postgresql.org/",
   },
   {
+    title: "Mongo DB",
+    row: "backend",
+    link: "https://www.mongodb.com/",
+  },
+  {
     title: "GraphQL",
     row: "backend",
     link: "https://graphql.org/",

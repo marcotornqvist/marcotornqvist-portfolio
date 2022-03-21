@@ -1,6 +1,5 @@
 <script>
   import { onMount } from "svelte";
-  import truncateText from "../../../../utils/handlers/truncateText";
 
   $: innerWidth = 0;
   let mobile = true;
@@ -36,20 +35,24 @@
         {#if !visible && mobile}
           Collabor8 is a social-media like platform created primarily for
           creators/artists that are looking to collaborate on different
-          versatile projects...
+          versatile projects. The main goal with Collabor8 was to create a
+          project that would cover most of my web development skills in one
+          single project, and in the mean time use as many modern technologies
+          as possible...
         {:else}
           Collabor8 is a social-media like platform created primarily for
           creators/artists that are looking to collaborate on different
           versatile projects. The main goal with Collabor8 was to create a
           project that would cover most of my web development skills in one
-          single project and in the mean time use as many modern technologies as
-          possible. I started out with designing the application, in Adobe XD. I
-          then progressed to build the Backend and lastly but not least the
-          Frontend.
+          single project, and in the mean time use as many modern technologies
+          as possible. I started out with designing the application, in Adobe
+          XD. I then progressed to build the Backend and lastly but not least
+          the Frontend.
           <br /><br />
-          The application uses technologies such as Next.js, TypeScript, GraphQL,
-          Node.js, AWS, Prisma & PostgreSQL and covers functionality such as chat-messaging
-          (subscriptions), image upload, authentication, queries & mutations.
+          The application uses technologies such as Next.js, TypeScript, Node.js,
+          GraphQL, Apollo, AWS, Prisma & PostgreSQL and covers functionality such
+          as chat-messaging (subscriptions), image upload, authentication, queries
+          & mutations.
         {/if}
       </p>
       {#if !visible && mobile}
@@ -90,31 +93,35 @@
     flex-direction: column;
     opacity: 0;
     transition: opacity 1s;
-    border-top-left-radius: $radius-md;
-    border-top-right-radius: $radius-md;
 
     &.visible {
       opacity: 1;
     }
 
     .image-container {
+      display: flex;
+      align-items: flex-end;
+      padding-top: 3rem;
       width: 100%;
+      background: $orange;
       z-index: $z-index1;
+      border-top-left-radius: $radius-md;
+      border-top-right-radius: $radius-md;
 
       img {
-        height: 300px;
         width: 100%;
-        object-fit: cover;
-        object-position: center 10%;
-        border-top-left-radius: $radius-md;
-        border-top-right-radius: $radius-md;
+        height: 300px;
+        object-fit: contain;
+        object-position: center;
+        border: none;
       }
     }
 
     .content {
+      display: flex;
+      flex-direction: column;
       flex: 1;
       padding: 2rem 1.5rem;
-      margin-top: -4px;
       border-bottom-left-radius: $radius-md;
       border-bottom-right-radius: $radius-md;
       background: $white;
@@ -135,6 +142,7 @@
         .read-more {
           font-family: $font-body;
           color: $orange;
+          cursor: pointer;
         }
       }
 
@@ -145,6 +153,7 @@
       .buttons {
         display: flex;
         flex-direction: column;
+        align-items: flex-end;
         padding-top: 2rem;
 
         button {
@@ -169,6 +178,7 @@
           }
 
           span {
+            font-size: 14px;
             color: $dark-blue;
           }
         }
@@ -177,18 +187,21 @@
   }
 
   @media only screen and (min-width: $breakpoint-sm) {
-    .project-item .content .buttons {
-      display: flex;
-      flex-direction: row;
-
-      button {
-        min-width: initial;
+    .project-item {
+      .content .buttons {
+        display: flex;
+        flex-direction: row;
         flex: 1;
-        margin: 0 1rem 0 0;
-        max-width: 250px;
 
-        &:last-child {
-          margin: 0;
+        button {
+          min-width: initial;
+          flex: 1;
+          margin: 0 1rem 0 0;
+          max-width: 250px;
+
+          &:last-child {
+            margin: 0;
+          }
         }
       }
     }
@@ -201,17 +214,19 @@
       .image-container {
         flex: 1;
         height: 700px;
-
-        img {
-          border-radius: 0;
-        }
+        border-radius: 0;
+        border-top-left-radius: $radius-md;
+        border-bottom-left-radius: $radius-md;
       }
 
       .content {
         flex: 1;
-        margin: 0;
         height: 700px;
-        padding-top: 6rem;
+        margin: 0;
+        padding-top: 3rem;
+        border-radius: 0;
+        border-top-right-radius: $radius-md;
+        border-bottom-right-radius: $radius-md;
 
         .buttons {
           display: flex;
@@ -226,6 +241,32 @@
             }
           }
         }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1050px) {
+    .project-item {
+      .image-container {
+        img {
+          height: 70%;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: $breakpoint-xl) {
+    .project-item {
+      .image-container {
+        padding-top: 6rem;
+
+        img {
+          height: 100%;
+        }
+      }
+
+      .content {
+        padding-top: 5.5rem;
       }
     }
   }

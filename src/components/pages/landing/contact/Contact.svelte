@@ -90,6 +90,10 @@
       cursor: pointer;
       outline: none;
 
+      h4 {
+        font-weight: 400;
+      }
+
       .email {
         flex: 1;
         padding-left: 1rem;
@@ -121,6 +125,15 @@
           min-width: 2rem;
           min-height: 2rem;
         }
+      }
+    }
+  }
+
+  @media only screen and (min-width: $breakpoint-md) {
+    .contact {
+      button {
+        margin: 0 auto;
+        max-width: 600px;
       }
     }
   }

@@ -13,6 +13,8 @@
   $: list = mobile && !visible ? technologies.slice(0, 5) : technologies;
 </script>
 
+<svelte:window bind:innerWidth />
+
 <div
   class="skills"
   use:inViewport={{ bottom: 250 }}
@@ -78,6 +80,7 @@
 <style lang="scss">
   @import "../../../../styles/variables/colors";
   @import "../../../../styles/variables/border-radius";
+  @import "../../../../styles/variables/breakpoints";
   @import "../../../../styles/variables/fonts";
 
   .skills {
@@ -93,6 +96,7 @@
 
     .about {
       margin-bottom: 3rem;
+      max-width: 65ch;
 
       h3 {
         margin-bottom: 1rem;
@@ -117,7 +121,7 @@
 
         span {
           font-family: $font-body;
-          font-size: 1.125rem;
+          font-size: 1.25rem;
         }
 
         svg {
@@ -140,6 +144,77 @@
       border-radius: $radius-md;
       background: $white;
       color: $dark-blue;
+    }
+  }
+
+  @media only screen and (min-width: $breakpoint-md) {
+    .skills {
+      padding-bottom: 12rem;
+
+      ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+
+        li:last-child {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: $breakpoint-lg) {
+    .skills {
+      .about p {
+        font-size: 1.25rem;
+        line-height: 2.25rem;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+
+        h2 {
+          grid-column: 1 / 2;
+          grid-row: 1;
+          margin: 0;
+        }
+
+        .about {
+          grid-column: 2 / 3;
+          grid-row: 1 / 3;
+          margin: 0;
+
+          h3 {
+            margin-bottom: 3rem;
+          }
+        }
+
+        .grid-title {
+          grid-column: 1 / 2;
+          grid-row: 2;
+          margin: 0;
+          align-self: flex-end;
+        }
+
+        ul {
+          grid-template-columns: repeat(3, 1fr);
+          grid-column: 1 / 3;
+          grid-row: 3;
+          margin-top: 6rem;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: $breakpoint-xl) {
+    .skills {
+      .container {
+        ul {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
     }
   }
 </style>
