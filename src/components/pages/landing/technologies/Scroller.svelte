@@ -13,7 +13,15 @@
 </div>
 
 <style lang="scss">
+  @import "../../../../styles/variables/breakpoints";
+
   .scroller {
     padding-bottom: 9rem;
+  }
+
+  @media only screen and (min-width: $breakpoint-md) {
+    .scroller {
+      padding-bottom: 12rem;
+    }
   }
 </style>

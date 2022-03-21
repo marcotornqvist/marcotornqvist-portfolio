@@ -31,6 +31,7 @@
 
     li {
       margin-right: 1.5rem;
+      cursor: initial;
 
       h1 {
         text-transform: uppercase;
