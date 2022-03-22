@@ -35,7 +35,7 @@
   @import "../../../styles/variables/shadows";
 
   .about {
-    display: flex;
+    display: block;
     padding-bottom: 3rem;
 
     .container {

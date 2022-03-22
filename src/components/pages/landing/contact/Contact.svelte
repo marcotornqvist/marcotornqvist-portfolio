@@ -67,10 +67,8 @@
   @import "../../../../styles/variables/colors";
 
   .contact {
-    display: flex;
-    justify-content: center;
+    display: block;
     padding-bottom: 9rem;
-    position: relative;
 
     h4.title {
       text-align: center;
