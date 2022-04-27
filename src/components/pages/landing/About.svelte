@@ -22,7 +22,7 @@
         applications since early 2018 through multiple hobby and school
         projects. I speak fluent Finnish, Swedish and English. My passion and
         goal is to create seamless and elegant web applications that meets the
-        clients expectations as good possible.
+        clients expectations as good as possible.
       </p>
     {/if}
   </div>

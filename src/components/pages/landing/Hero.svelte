@@ -14,7 +14,7 @@
       </h2>
       <p in:fly={{ y: 100, duration: 1000 }}>
         My passion and goal is to create seamless and elegant web applications
-        that meets the clients expectations as good possible.
+        that meets the clients expectations as good as possible.
       </p>
     {/if}
   </div>
@@ -55,7 +55,7 @@
       p {
         font-size: 1.5rem;
         line-height: 2.75rem;
-        max-width: 44ch;
+        max-width: 45ch;
       }
     }
   }

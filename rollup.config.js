@@ -34,15 +34,15 @@ function serve() {
 }
 
 export default {
+  watch: {
+    chokidar: false,
+  },
   input: "src/main.js",
   output: {
     sourcemap: true,
     format: "iife",
     name: "app",
     file: "public/build/bundle.js",
-  },
-  watch: {
-    chokidar: false,
   },
   plugins: [
     svelte({
