@@ -13,8 +13,8 @@
         I'm a Full Stack Developer based in Helsinki, Finland.
       </h2>
       <p in:fly={{ y: 100, duration: 1000 }}>
-        Currently open for hire, preferably at a company based in Helsinki or
-        Remote/Hybrid.
+        My passion and goal is to create seamless and elegant web applications
+        that meets the clients expectations as good possible.
       </p>
     {/if}
   </div>
@@ -55,7 +55,7 @@
       p {
         font-size: 1.5rem;
         line-height: 2.75rem;
-        max-width: 33ch;
+        max-width: 44ch;
       }
     }
   }

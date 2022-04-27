@@ -20,9 +20,9 @@
         I’m currently a last year Information Technology student at Arcada
         University of Applied Sciences in Helsinki. I’ve worked with web
         applications since early 2018 through multiple hobby and school
-        projects. I speak fluent Finnish, Swedish and English. I’m currently
-        open for hire, preferably at a company based in Helsinki or
-        Remote/Hybrid.
+        projects. I speak fluent Finnish, Swedish and English. My passion and
+        goal is to create seamless and elegant web applications that meets the
+        clients expectations as good possible.
       </p>
     {/if}
   </div>
