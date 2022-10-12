@@ -50,6 +50,11 @@ export const technologies = [
     link: "https://expressjs.com/",
   },
   {
+    title: "Nest.js",
+    row: "backend",
+    link: "https://nestjs.com/",
+  },
+  {
     title: "PostgreSQL",
     row: "backend",
     link: "https://www.postgresql.org/",
@@ -80,6 +85,16 @@ export const technologies = [
     link: "https://www.prisma.io/",
   },
   {
+    title: "Contentful CMS",
+    row: "tools",
+    link: "https://www.contentful.com/",
+  },
+  {
+    title: "Strapi CMS",
+    row: "tools",
+    link: "https://strapi.io/",
+  },
+  {
     title: "Github",
     row: "tools",
     link: "https://github.com/",
@@ -93,11 +108,6 @@ export const technologies = [
     title: "Vercel",
     row: "tools",
     link: "https://vercel.com",
-  },
-  {
-    title: "Heroku",
-    row: "tools",
-    link: "https://www.heroku.com",
   },
   {
     title: "Adobe XD",

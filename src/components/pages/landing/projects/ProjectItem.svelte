@@ -68,7 +68,7 @@
     <span class="date">Mar 14, 2022</span>
     <div class="buttons">
       <button>
-        <a href="https://collabor8-frontend.vercel.app/" target="blank">
+        <a href="https://collabor8-sepia.vercel.app" target="blank">
           <span>Demo</span>
         </a>
       </button>
