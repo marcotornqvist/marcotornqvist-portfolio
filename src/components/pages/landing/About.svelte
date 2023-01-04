@@ -17,12 +17,13 @@
         A little bit about me.
       </h2>
       <p in:fly={{ y: 50, duration: 1000, delay: 1500 }}>
-        I’m currently a last year Information Technology student at Arcada
-        University of Applied Sciences in Helsinki. I’ve worked with web
-        applications since early 2018 through multiple hobby and school
-        projects. I speak fluent Finnish, Swedish and English. My passion and
-        goal is to create seamless and elegant web applications that meets the
-        clients expectations as good as possible.
+        I am currently employed as a Software Developer at Vincit. I received my
+        Bachelor's degree in Information Technology from Arcada University of
+        Applied Sciences in late 2022. Since early 2018, I have gained
+        experience working with web applications through a variety of work,
+        personal, and academic projects. I am fluent in Finnish, Swedish, and
+        English. My passion and goal is to create seamless and elegant
+        applications that help my clients succeed and reach their goals.
       </p>
     {/if}
   </div>

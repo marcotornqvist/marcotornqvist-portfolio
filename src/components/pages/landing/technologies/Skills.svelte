@@ -33,10 +33,10 @@
           new technologies.
         </h3>
         <p>
-          lately I’ve been learning about Solidity and Blockchain development.
-          I’m eager to learn more about Web3 technologies, but also frontend
-          frameworks such as Svelte (this site is made with Svelte), Remix and
-          backend languages such as Golang and Rust.
+          Mostly recently, I have been focusing on learning more about AWS,
+          NestJS, Docker, and frontend frameworks like Svelte (this site is
+          built with Svelte). Additionally, I'm curious to learn more about Web3
+          and delving deeper into design tools such as Figma.
         </p>
       </div>
       <h3 class="grid-title" in:fly={{ y: 50, duration: 1000, delay: 1000 }}>

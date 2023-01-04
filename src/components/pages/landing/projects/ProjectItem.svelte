@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte";
+  import { technologies } from "../../../../utils/technologies";
 
   $: innerWidth = 0;
   let mobile = true;
@@ -33,29 +34,28 @@
     <div class="description">
       <p>
         {#if !visible && mobile}
-          Collabor8 is a social-media like platform created primarily for
-          creators/artists that are looking to collaborate on different
-          versatile projects. The main goal with Collabor8 was to create a
-          project that would cover most of my web development skills in one
-          single project, and in the mean time use as many modern technologies
-          as possible...
+          Collabor8 is a social media platform designed for creators and artists
+          seeking to collaborate on various projects. The main goal of Collabor8
+          was to create a comprehensive project that would showcase my web
+          development skills by utilizing different modern technologies. I began
+          by designing the application in Adobe XD, then moved on to building
+          the backend and frontend.
         {:else}
-          Collabor8 is a social-media like platform created primarily for
-          creators/artists that are looking to collaborate on different
-          versatile projects. The main goal with Collabor8 was to create a
-          project that would cover most of my web development skills in one
-          single project, and in the mean time use as many modern technologies
-          as possible. I started out with designing the application, in Adobe
-          XD. I then progressed to build the Backend and lastly but not least
-          the Frontend.
-          <br /><br />
-          The application uses technologies such as Next.js, TypeScript, Node.js,
-          GraphQL, Apollo, AWS, Prisma & PostgreSQL and covers functionality such
-          as chat-messaging (subscriptions), image upload, authentication, queries
-          & mutations.
+          Collabor8 is a social media platform designed for creators and artists
+          seeking to collaborate on various projects. The main goal of Collabor8
+          was to create a comprehensive project that would showcase my web
+          development skills by utilizing different modern technologies. I began
+          by designing the application in Adobe XD, then moved on to building
+          the backend and frontend. The application utilizes technologies such
+          as Next.js, TypeScript, Node.js, GraphQL, Apollo, AWS, Prisma, and
+          PostgreSQL, and offers features such as chat messaging with
+          subscriptions, image upload, authentication, and a large amount of
+          queries and mutations. The application is hosted on railway.app and
+          might be offline at times.
         {/if}
       </p>
       {#if !visible && mobile}
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
         <span
           class="read-more"
           class:hidden={visible}

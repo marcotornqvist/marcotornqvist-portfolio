@@ -10,11 +10,11 @@
   <div class="container">
     {#if ready}
       <h2 in:fly={{ y: 100, duration: 1000 }}>
-        I'm a Full Stack Developer based in Helsinki, Finland.
+        I'm a Softw Developer based in Helsinki, Finland.
       </h2>
       <p in:fly={{ y: 100, duration: 1000 }}>
-        My passion and goal is to create seamless and elegant web applications
-        that meets the clients expectations as good as possible.
+        My passion and goal is to create seamless and elegant applications that
+        help my clients succeed and reach their goals.
       </p>
     {/if}
   </div>
