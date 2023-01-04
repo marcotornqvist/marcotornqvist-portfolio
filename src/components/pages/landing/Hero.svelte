@@ -10,7 +10,7 @@
   <div class="container">
     {#if ready}
       <h2 in:fly={{ y: 100, duration: 1000 }}>
-        I'm a Softw Developer based in Helsinki, Finland.
+        I'm a Software Developer based in Helsinki, Finland.
       </h2>
       <p in:fly={{ y: 100, duration: 1000 }}>
         My passion and goal is to create seamless and elegant applications that
