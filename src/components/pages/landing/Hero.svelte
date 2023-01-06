@@ -9,13 +9,15 @@
 <div class="hero">
   <div class="container">
     {#if ready}
-      <h2 in:fly={{ y: 100, duration: 1000 }}>
-        I'm a Software Developer based in Helsinki, Finland.
-      </h2>
-      <p in:fly={{ y: 100, duration: 1000 }}>
-        My passion and goal is to create seamless and elegant applications that
-        help my clients succeed and reach their goals.
-      </p>
+      <div class="wrapper">
+        <h2 in:fly={{ y: 100, duration: 1000 }}>
+          I'm a Software Developer based in Helsinki, Finland.
+        </h2>
+        <p in:fly={{ y: 100, duration: 1000 }}>
+          My passion and goal is to create seamless and elegant applications
+          that help my clients succeed and reach their goals.
+        </p>
+      </div>
     {/if}
   </div>
 </div>
@@ -28,10 +30,15 @@
   .hero {
     display: flex;
     align-items: center;
-    min-height: 70vh;
+    min-height: calc(100vh - 5rem);
+    // min-height: 70vh;
 
     .container {
       padding-bottom: 3rem;
+    }
+
+    .wrapper {
+      padding-bottom: 5rem;
     }
 
     h2 {

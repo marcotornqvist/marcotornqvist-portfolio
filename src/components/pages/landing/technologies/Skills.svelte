@@ -17,7 +17,7 @@
 
 <div
   class="skills"
-  use:inViewport={{ bottom: 250 }}
+  use:inViewport={{ bottom: 100 }}
   on:enter={() => (skillsVisible = true)}
 >
   <div class="container">

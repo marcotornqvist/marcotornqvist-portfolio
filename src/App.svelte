@@ -13,7 +13,7 @@
 <main>
   <div class="wrapper">
     <Hero />
-    <Projects />
+    <!-- <Projects /> -->
   </div>
   <!-- <Scroller /> -->
   <Skills />
